@@ -30,8 +30,6 @@ export const App = () => {
     setIsReversed(false);
   };
 
-  const isOriginal = visibleGoods.every((g, i) => g === goodsFromServer[i]);
-
   function handleSortByName() {
     setSortField(SORT_FIELD_NAME);
     setIsReversed(false);
@@ -57,6 +55,8 @@ export const App = () => {
   if (isReversed) {
     visibleGoods.reverse();
   }
+
+  const isOriginal = visibleGoods.every((g, i) => g === goodsFromServer[i]);
 
   return (
     <div className="section content">
